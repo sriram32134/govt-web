@@ -10,7 +10,13 @@ const complaintRoutes = require("./routes/complaintRoutes");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://YOUR_FRONTEND_URL.vercel.app" // we’ll update later
+  ]
+}));
+
 app.use(express.json());
 
 mongoose
